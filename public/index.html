@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>emailer</title>
+</head>
+<body>
+    <form action="/send-email" id="form" method="POST">
+        <label for="from">From</label>
+        <input type="email" name="from" class="inp">
+        <label for="to">To</label>
+        <input type="email" name="to" class="inp">
+        <label for="subject">Subject</label>
+        <input type="text" name="subject" class="inp">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" class="inp"></textarea>
+
+        <input value="Send" type="submit">
+    </form>
+</body>
+</html>
