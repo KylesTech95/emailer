@@ -8,10 +8,14 @@
 </head>
 <body>
     <form action="/send-email" id="form" method="POST">
-        <label for="from">From</label>
-        <input type="email" name="from" class="inp">
         <label for="to">To</label>
         <input type="email" name="to" class="inp">
+        <label for="from">From</label>
+        <input type="email" name="from" value="kylestech95@gmail.com" class="inp">
+        <label for="to">Cc</label>
+        <input type="email" name="cc" class="inp">
+        <label for="to">Bcc</label>
+        <input type="email" name="bcc" class="inp">
         <label for="subject">Subject</label>
         <input type="text" name="subject" class="inp">
         <label for="message">Message</label>
