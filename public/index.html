@@ -7,11 +7,13 @@
     <title>emailer</title>
 </head>
 <body>
+    <h2 id="email-title">Send me a Message</h2>
     <form action="/send-email" id="form" method="POST">
         <label for="to">To</label>
-        <input type="email" id="to" name="to" value="kylestech95@gmail.com" class="inp">
+        <input type="email" id="to" name="to" class="inp">
         <label for="from">From</label>
-        <input type="email" name="from" value="" class="inp" required>
+        <!-- Set the from-value to match which mailbox you are utilizing -->
+        <input type="email" name="from" class="inp" required>
         <label for="to">Cc</label>
         <input type="email" name="cc" class="inp">
         <label for="to">Bcc</label>
