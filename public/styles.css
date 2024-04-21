@@ -3,7 +3,7 @@
     padding:0;
     box-sizing:border-box;
 }
-#form{
+#wrapper{
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -13,15 +13,40 @@
     border-top: 1rem outset red;
     border-bottom: 1rem outset rgb(148, 69, 69);
     transition: .5s;
-    padding:1rem;
     border-radius:12px;
+    height:50vh;
 }
-#form:hover{
+#form{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+#wrapper:hover{
     border-bottom: 1rem outset red;
     border-top: 1rem outset rgb(148, 69, 69);
     border-right: 1rem outset red;
     border-left: 1rem outset rgb(148, 69, 69);
     transition: .5s;
+}
+#name-container{
+    display:flex;
+    flex-direction:column;
+    width:550px;
+    min-width:550px;
+    height:50px;
+    min-height:50px;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+    border:3px solid gold;
+    position:relative;
+}
+.name-scroll{
+    height:inherit;
+    width:inherit;
+    display:flex;
+    position:absolute;
 }
 body{
     background:silver;
@@ -31,10 +56,56 @@ body{
     justify-content:center;
     height:100vh;
 }
-/* #to,label:nth-child(1){
+.div-part{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:550px;
+    min-width:550px;
+    transition:.24s;
+}
+.arrow-opacity{
     opacity:0;
-    transform:scale(0);
+    transition:25s;
+}
+.arrow{
+position:fixed;
+z-index:999;
+font-size:50px;
+border:2px solid #333;
+border-radius:50%;
+transition:.25s;
+}
+/* .arrow-forward{
+    right:20px;
+}
+.arrow-backward{
+    left:20px;
 } */
+.hide-arrow{
+    opacity:0;
+    pointer-events:none;
+    z-index: 997;
+    transition: .5s;
+}
+.arrow:hover{
+cursor:pointer;
+transform:scale(.85);
+transition: .25s;
+}
+
+
+
+
+
+.div-part>.inp{
+    width:100%;
+    text-align:center;
+    height:100%;
+}
+
 
 .not-visible{
     transform:scale(0);
@@ -43,4 +114,12 @@ body{
     height:0;
     width:0;
 }
+.horiz{
+    width:100%;
+    border:4px dotted #333;
+    margin:1rem 0;
+}
+/* #form>label,#form>.inp{
+
+} */
 

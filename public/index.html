@@ -2,32 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>emailer</title>
 </head>
 <body>
-    <h2 id="email-title">Send me a Message</h2>
-    <form action="/send-email" id="form" method="POST">
-        <!-- Set the to-value to match which mailbox you are utilizing -->
-        <label for="to" class="not-visible">To</label>
-        <input type="password" id="to" name="to" class="inp not-visible" readonly>
-        <!-- <label for="to">To</label>
-        <input type="email" id="to1" name="to" class="inp"> -->
-        <label for="from">From</label>
-        <input type="email" name="from" class="inp" id="from" >
-        <!-- <label for="to">Cc</label>
-        <input type="email" name="cc" class="inp"> -->
-        <!-- <label for="to">Bcc</label> -->
-        <!-- <input type="email" name="bcc" class="inp"> -->
-        <label for="subject">Subject</label>
-        <input type="text" name="subject" class="inp" id="subject">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" class="inp"></textarea>
-
-        <input value="Send" type="submit">
-        <input type="file" name="file" id="filer" accept="image/png, image/jpeg" multiple="multiple">
-    </form>
+    <div id="wrapper">
+        <h2 id="email-title">Send me a Message</h2>
+        <form action="/send-email" id="form" method="POST">
+            <!-- Set the to-value to match which mailbox you are utilizing -->
+            <label for="to" class="not-visible">To</label>
+            <input type="password" id="to" name="to" class="inp not-visible" readonly>
+            <!-- <label for="to">To</label>
+            <input type="email" id="to1" name="to" class="inp"> -->
+            <div id="name-container">
+                <span class="material-symbols-outlined arrow arrow-forward arrow-opacity">
+                    navigate_next
+                </span>
+                <span class="material-symbols-outlined arrow arrow-backward hide-arrow arrow-opacity">
+                    navigate_before
+                    </span>
+                <div class="name-scroll">
+                    <div class="part div-part">
+                        <!-- <label for="first">Firstname</label> -->
+                        <input type="text" name="first" class="inp" id="first" required placeholder="First Name">
+                    </div>
+                    
+                    <div class="pare div-part">
+                        <!-- <label for="last">Lastname</label> -->
+                        <input type="text" name="last" class="inp" id="last" required placeholder="Last Name">
+                    </div>
+                </div>
+            </div>
+            <label for="from">Email</label>
+            <input type="email" name="from" class="inp" id="from" >
+            <!-- <label for="to">Cc</label>
+            <input type="email" name="cc" class="inp"> -->
+            <!-- <label for="to">Bcc</label> -->
+            <!-- <input type="email" name="bcc" class="inp"> -->
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" class="inp" id="subject">
+            <hr class="horiz horizontal not-vert hr">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" class="inp"></textarea>
+    
+            <input value="Send" type="submit">
+            <input type="file" name="file" id="filer" accept="image/png, image/jpeg" multiple="multiple">
+        </form>
+    </div>
+    
 </body>
 <script src="main.js" type="module"></script>
 </html>
