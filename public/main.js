@@ -11,8 +11,9 @@ let to_field = document.getElementById('to')
 const delayArrowsOnload = (arrow) => {
     setTimeout(()=>arrow.classList.remove('arrow-opacity'),1750)
 }
-// getEmail(secret,to_field)
-// screentimer(window)
+
+getEmail(secret,to_field)
+screentimer(window)
 fixarrows(arrows,name_con)
 
 arrows.forEach((arrow,index)=>{
