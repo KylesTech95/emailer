@@ -8,6 +8,20 @@
     flex-direction:column;
     align-items:center;
     justify-content:center;
+    border-left: 1rem outset red;
+    border-right: 1rem outset rgb(148, 69, 69);
+    border-top: 1rem outset red;
+    border-bottom: 1rem outset rgb(148, 69, 69);
+    transition: .5s;
+    padding:1rem;
+    border-radius:12px;
+}
+#form:hover{
+    border-bottom: 1rem outset red;
+    border-top: 1rem outset rgb(148, 69, 69);
+    border-right: 1rem outset red;
+    border-left: 1rem outset rgb(148, 69, 69);
+    transition: .5s;
 }
 body{
     background:silver;
@@ -21,3 +35,12 @@ body{
     opacity:0;
     transform:scale(0);
 } */
+
+.not-visible{
+    transform:scale(0);
+    pointer-events: none;
+    opacity:0;
+    height:0;
+    width:0;
+}
+
