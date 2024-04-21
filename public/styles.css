@@ -34,7 +34,7 @@
     flex-direction:column;
     width:550px;
     min-width:550px;
-    height:50px;
+    height:60px;
     min-height:50px;
     align-items: center;
     justify-content: center;
@@ -74,9 +74,9 @@ body{
 position:fixed;
 z-index:999;
 font-size:50px;
-border:2px solid #333;
+bordeR:2px solid transparent;
 border-radius:50%;
-transition:.25s;
+transition:.5s;
 }
 /* .arrow-forward{
     right:20px;
@@ -94,6 +94,7 @@ transition:.25s;
 cursor:pointer;
 transform:scale(.85);
 transition: .25s;
+border:2px solid #333;
 }
 
 

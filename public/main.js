@@ -9,9 +9,12 @@ const arrows = document.querySelectorAll('.arrow')
 const secret = '/get-email'
 let to_field = document.getElementById('to')
 const delayArrowsOnload = (arrow) => {
-    setTimeout(()=>arrow.classList.remove('arrow-opacity'),1750)
+    setTimeout(()=>arrow.classList.remove('arrow-opacity'),1000)
 }
-
+window.addEventListener('keydown',e=>{
+    console.log(e.key)
+    if(e.key==='Tab')e.preventDefault()
+})
 getEmail(secret,to_field)
 screentimer(window)
 fixarrows(arrows,name_con)
