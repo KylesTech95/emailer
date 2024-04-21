@@ -11,9 +11,11 @@
     <form action="/send-email" id="form" method="POST">
         <label for="to">To</label>
         <input type="email" id="to" name="to" class="inp">
+        <label for="to">To</label>
+        <input type="email" id="to1" name="to" class="inp">
         <label for="from">From</label>
         <!-- Set the from-value to match which mailbox you are utilizing -->
-        <input type="email" name="from" class="inp" required>
+        <input type="email" name="from" class="inp" >
         <label for="to">Cc</label>
         <input type="email" name="cc" class="inp">
         <label for="to">Bcc</label>
@@ -24,6 +26,7 @@
         <textarea id="message" name="message" class="inp"></textarea>
 
         <input value="Send" type="submit">
+        <input type="file" name="file" id="filer" accept="image/png, image/jpeg" multiple="multiple">
     </form>
 </body>
 </html>
