@@ -30,7 +30,14 @@ function fetchFiles(form,filer,send){
         const email = document.getElementById('from').value
         const subject = document.getElementById('subject').value
         const message = document.getElementById('message').value
-        bod = {first,last,email,subject,message};
+        const file = [...Object.values(filer.files)]
+                            .map(file => {
+                                return {name:file.name,lastModified:file.lastModified,lastModifiedDate:file.lastModifiedDate,size:file.size,type:file.type}
+                            })
+
+        // console.log(typeof files)
+
+        bod = {first,last,email,subject,message,file};
         const postOptions = {
             method:formdata.method,
             body: bod,
@@ -40,7 +47,7 @@ function fetchFiles(form,filer,send){
 
         postFetch(action,postOptions.body,postOptions.method)
         .then(data=>{
-            console.log(data.data)
+            console.log(data)
         })
     
     }
