@@ -1,6 +1,6 @@
 function fixarrows(arrows_arr, container){
-    console.log(arrows_arr)
-    console.log(container)
+    // console.log(arrows_arr)
+    // console.log(container)
     let container_obj = {
         leftside:container.getBoundingClientRect().x,
         rightside:container.getBoundingClientRect().x+container.clientWidth,
@@ -17,7 +17,7 @@ function fixarrows(arrows_arr, container){
                 arrow.style.left = (container_obj.rightside - (arrow.clientWidth-3))+'px';
             break;
             default:
-                console.log(undefined);
+                // console.log(undefined);
             break;
         }
     })

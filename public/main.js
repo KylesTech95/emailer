@@ -1,11 +1,14 @@
 import fixarrows from './fixarrows.js'
 import getEmail from './emailhelper.js'
 import screentimer from './screentimer.js'
+import fetchFiles from './fetchfiles.js'
 
 const fName = document.querySelector('#first')
 const lName = document.querySelector('#last')
 const name_con = document.getElementById('name-container')
 const arrows = document.querySelectorAll('.arrow')
+const send = document.getElementById('send-submit')
+const filer = document.getElementById('filer')
 const secret = '/get-email'
 let to_field = document.getElementById('to')
 const delayArrowsOnload = (arrow) => {
@@ -17,6 +20,7 @@ const delayArrowsOnload = (arrow) => {
 getEmail(secret,to_field)
 screentimer(window)
 fixarrows(arrows,name_con)
+fetchFiles(filer,send)
 
 arrows.forEach((arrow,index)=>{
     delayArrowsOnload(arrow)
@@ -25,7 +29,7 @@ arrows.forEach((arrow,index)=>{
             lName.focus();
             e.target.classList.add('hide-arrow')
             arrows[1].classList.remove('hide-arrow')
-            console.log('you went to last')
+            // console.log('you went to last')
         })
     }
     else{
@@ -33,8 +37,9 @@ arrows.forEach((arrow,index)=>{
             fName.focus();
             e.target.classList.add('hide-arrow')
             arrows[0].classList.remove('hide-arrow')
-            console.log('you went to first')
+            // console.log('you went to first')
         })
     }
 })
-console.log(window)
+// console.log(window)
+
