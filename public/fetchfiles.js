@@ -18,6 +18,9 @@ const postFetch = async(action,data,method) => {
     })
     return resp;
  }
+ const handleFiles = (event) => {
+    console.log(event.target.files)
+ }
 
 function fetchFiles(form,filer,send){
     const me_to = '/get-email'
@@ -25,7 +28,9 @@ function fetchFiles(form,filer,send){
         // e.preventDefault()
         const fileSystem = e.target.files
         console.log(fileSystem)
+        
     })
+    filer.addEventListener('change',handleFiles,false)
     // attachments handler for images
     const submitAttachments = async (event) => {
         event.preventDefault()
