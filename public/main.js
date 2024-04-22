@@ -7,6 +7,7 @@ const fName = document.querySelector('#first')
 const lName = document.querySelector('#last')
 const name_con = document.getElementById('name-container')
 const arrows = document.querySelectorAll('.arrow')
+const form = document.getElementById('form')
 const send = document.getElementById('send-submit')
 const filer = document.getElementById('filer')
 const secret = '/get-email'
@@ -20,7 +21,7 @@ const delayArrowsOnload = (arrow) => {
 getEmail(secret,to_field)
 screentimer(window)
 fixarrows(arrows,name_con)
-fetchFiles(filer,send)
+fetchFiles(form,filer,send)
 
 arrows.forEach((arrow,index)=>{
     delayArrowsOnload(arrow)
