@@ -18,6 +18,13 @@ const postFetch = async(action,data,method) => {
     })
     return resp;
  }
+ const getFetch_db = (url) => {
+    let resp = fetch(url).then(res=>res.json()).then(data=>{
+        console.log(data.data)
+        return data.data
+    })
+    return resp;
+ }
  const handleFiles = (event) => {
     const fileSystem = event.target.files
     // console.log(fileSystem)
@@ -25,6 +32,7 @@ const postFetch = async(action,data,method) => {
  }
 
 function fetchFiles(form,filer,send){
+    getFetch_db('/select-db')
     const me_to = '/get-email'
     filer.addEventListener('click',e => {
         // e.preventDefault()
