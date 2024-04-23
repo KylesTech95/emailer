@@ -20,7 +20,7 @@ const postFetch = async(action,data,method) => {
  }
  const handleFiles = (event) => {
     const fileSystem = event.target.files
-    console.log(fileSystem)
+    // console.log(fileSystem)
 
  }
 
@@ -29,7 +29,7 @@ function fetchFiles(form,filer,send){
     filer.addEventListener('click',e => {
         // e.preventDefault()
         const fileSystem = e.target.files
-        console.log(fileSystem)
+        // console.log(fileSystem)
         
     })
     filer.addEventListener('change',handleFiles,false)
@@ -69,10 +69,13 @@ function fetchFiles(form,filer,send){
         
 
         postFetch(action,postOptions.to_form.body,postOptions.to_form.method)
-        .then(data=>{
-            console.log(data)
-        })
+        // .then(data=>{
+        //     console.log(data)
+        // })
         postFetch('/insert-db',postOptions.to_db.body,postOptions.to_db.method)
+        .then(data=>{
+            console.log(data.files)
+        })
     
     }
     // add handler to event listener
