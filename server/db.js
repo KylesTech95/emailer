@@ -9,11 +9,13 @@ const pool = new Pool({
     database: process.env.DB
 })
 
-const getData = async(pool) => {
-    let data = await pool.query('select * from images;')
-    const rows = data.rows
-    console.log(rows)
-    // console.log(pool)
-}
+// const getData = async(pool) => {
+//     let data = await pool.query('select * from images;')
+//     const rows = data.rows
+//     console.log(rows)
+//     // console.log(pool)
+// }
 
-getData(pool)
+// getData(pool)
+
+module.exports = {pool}

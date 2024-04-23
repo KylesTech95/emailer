@@ -20,8 +20,6 @@ const postFetch = async(action,data,method) => {
  }
  const handleFiles = (event) => {
     const fileSystem = event.target.files
-    let maxSize = 1024*1024 // 1G
-
     console.log(fileSystem)
 
  }
@@ -58,16 +56,23 @@ function fetchFiles(form,filer,send){
 
         bod = {first,last,from,to,subject,message,file};
         const postOptions = {
-            method:formdata.method,
-            body: bod,
+            to_form:{
+                method:formdata.method,
+                body: bod,
+            },
+            to_db:{
+                method:formdata.method,
+                body: {file},
+            }
         }
         // console.log(postOptions)
         
 
-        postFetch(action,postOptions.body,postOptions.method)
+        postFetch(action,postOptions.to_form.body,postOptions.to_form.method)
         .then(data=>{
             console.log(data)
         })
+        postFetch('/insert-db',postOptions.to_db.body,postOptions.to_db.method)
     
     }
     // add handler to event listener
