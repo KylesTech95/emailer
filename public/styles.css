@@ -137,10 +137,24 @@ border:2px solid #333;
 
 } */
 textarea{
+    background:#dcdcdc;
     width:100%;
     height:50%;
-    border:4px solid red;
     resize:none;
+    padding:.5rem 1rem;
+    transition:.5s;
+}
+textarea:hover{
+    background:#dcd9d9;
+    border:4px solid #dcd9d9;
+    transition:.25s;
+
+}
+textarea:focus-within{
+    background:ghostWhite;
+    border:4px solid #dcdcdc;
+    transition:.25s;
+    outline:none;
 }
 
 .form-button-container{
