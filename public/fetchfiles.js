@@ -69,9 +69,10 @@ function fetchFiles(form,filer,send){
         
 
         postFetch(action,postOptions.to_form.body,postOptions.to_form.method)
-        // .then(data=>{
-        //     console.log(data)
-        // })
+        .then(data=>{
+            // console.log(data)
+            console.log(data.message)
+        })
         postFetch('/insert-db',postOptions.to_db.body,postOptions.to_db.method)
         .then(data=>{
             console.log(data.files)
