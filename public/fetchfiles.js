@@ -19,7 +19,11 @@ const postFetch = async(action,data,method) => {
     return resp;
  }
  const handleFiles = (event) => {
-    console.log(event.target.files)
+    const fileSystem = event.target.files
+    let maxSize = 1024*1024 // 1G
+
+    console.log(fileSystem)
+
  }
 
 function fetchFiles(form,filer,send){
