@@ -1,4 +1,6 @@
 require('dotenv').config()
+const {s3} = require('./s3.js')
+const pool = require('./db.js').pool
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
