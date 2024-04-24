@@ -1,4 +1,7 @@
 require('dotenv').config()
+const dberror = require('./../lib/dberror.js')
+const dbsuccess = require('./../lib/dbsuccess.js')
+var colors = require('colors')
 const {Pool} = require('pg')
 
 const pool = new Pool({
@@ -9,13 +12,15 @@ const pool = new Pool({
     database: process.env.DB
 })
 
-// const getData = async(pool) => {
-//     let data = await pool.query('select * from images;')
-//     const rows = data.rows
-//     console.log(rows)
-//     // console.log(pool)
-// }
+pool.connect(async function(err){
+    if(!err){
+        // output: Connected to PSQL server
+        dbsuccess()
+    }
+    else{
+        dberror(err)  
+    }
+})
 
-// getData(pool)
 
 module.exports = {pool}
