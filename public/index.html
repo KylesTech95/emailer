@@ -48,11 +48,13 @@
             <input type="text" name="subject" class="inp" id="subject">
             <hr class="horiz horizontal not-vert hr">
             <label for="message">Message</label>
-            <textarea id="message" name="message" class="inp"></textarea>
+            <div class="textarea-inground backsplash textarea-container">
+                <textarea id="message" name="message" class="inp textarea-blur"></textarea>
+            </div>
     
             <div class="form-button-container">
                 <input type="file" name="file" id="filer" accept="image/png, image/jpeg" multiple="multiple" class="btn-inp">
-                <input value="Send" type="submit" class="btn-inp">
+                <input value="Send" type="submit" class="btn-inp send-disable" id="send-submit">
             </div>
             
 

@@ -6,6 +6,7 @@ import fetchFiles from './fetchfiles.js'
 const fName = document.querySelector('#first')
 const lName = document.querySelector('#last')
 const name_con = document.getElementById('name-container')
+const textarea = document.getElementById('message')
 const arrows = document.querySelectorAll('.arrow')
 const form = document.getElementById('form')
 const send = document.getElementById('send-submit')
@@ -18,10 +19,31 @@ const delayArrowsOnload = (arrow) => {
 // window.addEventListener('keydown',e=>{
 //     if(e.key==='Tab')e.preventDefault();
 // })
-getEmail(secret,to_field)
-screentimer(window)
+textarea.parentElement.onclick = e => {
+    let txtArea = e.currentTarget.children[0]
+    if(txtArea.classList.contains('textarea-blur')){
+        txtArea.classList.remove('textarea-blur');
+        send.classList.remove('send-disable')
+    }
+}
+
+textarea.onblur = e =>{
+    // console.log(e.target)
+    console.log('BLUR')
+    e.target.classList.add('textarea-blur')
+    send.classList.add('send-disable')
+
+}
+textarea.onfocus = e =>{
+    // console.log(e.target)
+    console.log('FOCUS')
+    e.target.classList.remove('textarea-blur');
+    send.classList.remove('send-disable')
+}
+// getEmail(secret,to_field)
+// screentimer(window)
 fixarrows(arrows,name_con)
-fetchFiles(form,filer,send)
+// fetchFiles(form,filer,send)
 
 arrows.forEach((arrow,index)=>{
     delayArrowsOnload(arrow)

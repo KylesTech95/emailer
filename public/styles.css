@@ -136,10 +136,46 @@ border:2px solid #333;
 /* #form>label,#form>.inp{
 
 } */
-textarea{
-    background:#dcdcdc;
+.textarea-inground{
     width:100%;
-    height:50%;
+    height:100%;
+    border:3px solid purple;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    flex-direction: column;
+    box-shadow: inset 0 0 1.5rem .5px #333;
+    position:relative;
+}
+
+.textarea-blur{
+    transform:scale(.88);
+    transition:.33s;
+    position:absolute;
+    box-shadow: 0 0 1rem .5px #333;
+    animation:springUp .5s forwards .15s ;
+}
+
+@keyframes springUp {
+    from{
+        top:0;
+    }
+    to{
+        top:-75%;
+    }
+}
+.send-disable{
+    pointer-events:none;
+    background:rgb(127, 127, 127);
+    transition:.33s;
+}
+textarea{
+    transition:.66s;
+    border:none;
+    background:#dcdcdc;
+    width:inherit;
+    height:inherit;
     resize:none;
     padding:.5rem 1rem;
     transition:.5s;

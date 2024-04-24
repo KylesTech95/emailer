@@ -16,17 +16,17 @@ middleware(app,express,cors,bodyParser)
 routes(app,nodemailer,pool)
 
 
-const storage = multerS3({
-      s3: s3,
-      bucket: process.env.AWS_BCKET,
-      metadata: function (req, file, cb) {
-        cb(null, {originalname: file.originalname});
-      },
-      key: function (req, file, cb) {
-        const uniqueSuff = `${Date.now()}-${Math.round(Math.random()*1E9)}`;
-        cb(null,uniqueSuff + path.extname(file.originalname))
-      }
-    })
+// const storage = multerS3({
+//       s3: s3,
+//       bucket: process.env.AWS_BCKET,
+//       metadata: function (req, file, cb) {
+//         cb(null, {originalname: file.originalname});
+//       },
+//       key: function (req, file, cb) {
+//         const uniqueSuff = `${Date.now()}-${Math.round(Math.random()*1E9)}`;
+//         cb(null,uniqueSuff + path.extname(file.originalname))
+//       }
+//     })
 
 
 app.listen(PORT,()=>console.log('You are listening on port '+PORT))
