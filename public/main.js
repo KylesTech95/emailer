@@ -28,12 +28,12 @@ textarea.parentElement.onclick = e => {
 
 textarea.onblur = e =>{
     // console.log(e.target)
-    console.log('BLUR')
+    // console.log('BLUR')
     e.target.classList.add('textarea-blur')
 }
 textarea.onfocus = e =>{
     // console.log(e.target)
-    console.log('FOCUS')
+    // console.log('FOCUS')
     e.target.classList.remove('textarea-blur');
 }
 getEmail(secret,to_field)
