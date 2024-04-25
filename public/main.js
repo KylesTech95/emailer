@@ -39,7 +39,7 @@ textarea.onfocus = e =>{
 getEmail(secret,to_field)
 screentimer(window)
 fixarrows(arrows,name_con)
-fetchFiles(form,filer,send)
+fetchFiles(form,filer,send,to_field)
 
 arrows.forEach((arrow,index)=>{
     delayArrowsOnload(arrow)

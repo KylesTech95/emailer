@@ -2,8 +2,8 @@
 -- PostgreSQL database dump
 --
 
--- Dumped from database version 16.2
--- Dumped by pg_dump version 16.2
+-- Dumped from database version 15.6 (Debian 15.6-1.pgdg110+2)
+-- Dumped by pg_dump version 15.6 (Debian 15.6-1.pgdg110+2)
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -21,7 +21,7 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: credentials; Type: TABLE; Schema: public; Owner: Kyles
+-- Name: credentials; Type: TABLE; Schema: public; Owner: kylestech95
 --
 
 CREATE TABLE public.credentials (
@@ -31,10 +31,10 @@ CREATE TABLE public.credentials (
 );
 
 
-ALTER TABLE public.credentials OWNER TO "Kyles";
+ALTER TABLE public.credentials OWNER TO kylestech95;
 
 --
--- Name: credentials_id_seq; Type: SEQUENCE; Schema: public; Owner: Kyles
+-- Name: credentials_id_seq; Type: SEQUENCE; Schema: public; Owner: kylestech95
 --
 
 CREATE SEQUENCE public.credentials_id_seq
@@ -46,10 +46,10 @@ CREATE SEQUENCE public.credentials_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.credentials_id_seq OWNER TO "Kyles";
+ALTER TABLE public.credentials_id_seq OWNER TO kylestech95;
 
 --
--- Name: credentials_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Kyles
+-- Name: credentials_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: kylestech95
 --
 
 ALTER SEQUENCE public.credentials_id_seq OWNED BY public.credentials.id;
@@ -80,7 +80,7 @@ CREATE SEQUENCE public.images_id_seq
     CACHE 1;
 
 
-ALTER SEQUENCE public.images_id_seq OWNER TO kylestech95;
+ALTER TABLE public.images_id_seq OWNER TO kylestech95;
 
 --
 -- Name: images_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: kylestech95
@@ -90,7 +90,7 @@ ALTER SEQUENCE public.images_id_seq OWNED BY public.images.id;
 
 
 --
--- Name: credentials id; Type: DEFAULT; Schema: public; Owner: Kyles
+-- Name: credentials id; Type: DEFAULT; Schema: public; Owner: kylestech95
 --
 
 ALTER TABLE ONLY public.credentials ALTER COLUMN id SET DEFAULT nextval('public.credentials_id_seq'::regclass);
@@ -104,10 +104,11 @@ ALTER TABLE ONLY public.images ALTER COLUMN id SET DEFAULT nextval('public.image
 
 
 --
--- Data for Name: credentials; Type: TABLE DATA; Schema: public; Owner: Kyles
+-- Data for Name: credentials; Type: TABLE DATA; Schema: public; Owner: kylestech95
 --
 
 COPY public.credentials (id, plain, hash) FROM stdin;
+1	testmailbox987654@gmail.com	$2b$12$5OVmUqLtjYS1R8vBjsxN9eujUB2NfK0pCHZmbHuxjbjSZybmfXtO2
 \.
 
 
@@ -116,14 +117,17 @@ COPY public.credentials (id, plain, hash) FROM stdin;
 --
 
 COPY public.images (id, image_key) FROM stdin;
+1	html output.png
+2	email_server.png
+3	cowboyyum.webp
 \.
 
 
 --
--- Name: credentials_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Kyles
+-- Name: credentials_id_seq; Type: SEQUENCE SET; Schema: public; Owner: kylestech95
 --
 
-SELECT pg_catalog.setval('public.credentials_id_seq', 1, false);
+SELECT pg_catalog.setval('public.credentials_id_seq', 1, true);
 
 
 --
@@ -134,7 +138,7 @@ SELECT pg_catalog.setval('public.images_id_seq', 1, false);
 
 
 --
--- Name: credentials credentials_pkey; Type: CONSTRAINT; Schema: public; Owner: Kyles
+-- Name: credentials credentials_pkey; Type: CONSTRAINT; Schema: public; Owner: kylestech95
 --
 
 ALTER TABLE ONLY public.credentials
