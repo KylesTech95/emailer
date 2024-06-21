@@ -84,19 +84,19 @@ body{
     pointer-events: none;
 }
 .arrow{
-position:fixed;
+position:absolute;
 z-index:999;
 font-size:50px;
 bordeR:2px solid transparent;
 border-radius:50%;
 transition:.5s;
 }
-/* .arrow-forward{
+.arrow-forward{
     right:20px;
 }
 .arrow-backward{
     left:20px;
-} */
+}
 .hide-arrow{
     opacity:0;
     pointer-events:none;
