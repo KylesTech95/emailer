@@ -84,7 +84,7 @@ body{
     pointer-events: none;
 }
 .arrow{
-position:absolute;
+position:fixed;
 z-index:999;
 font-size:50px;
 bordeR:2px solid transparent;

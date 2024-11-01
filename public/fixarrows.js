@@ -26,26 +26,26 @@ function fixarrows(arrows_arr, container) {
   };
   resizeArrows(arrows_arr)
 
-  window.onresize = (e) => {
-    resizeArrows(arrows_arr)
-    arrows_arr.forEach((arrow, index) => {
-        // switch statement
-        switch (true) {
-          // arrow - previous
-          case index % 2 !== 0:
-            arrow.style.left = container_obj.leftside + "px";
-            break;
-          // arrow - next
-          case index % 2 === 0:
-            arrow.style.left =
-              container_obj.rightside - (arrow.clientWidth - 3) + "px";
-            break;
-          default:
-            // console.log(undefined);
-            break;
-        }
-      });
-  };
+  // window.onresize = (e) => {
+  //   resizeArrows(arrows_arr)
+  //   arrows_arr.forEach((arrow, index) => {
+  //       // switch statement
+  //       switch (true) {
+  //         // arrow - previous
+  //         case index % 2 !== 0:
+  //           arrow.style.left = container_obj.leftside + "px";
+  //           break;
+  //         // arrow - next
+  //         case index % 2 === 0:
+  //           arrow.style.left =
+  //             container_obj.rightside - (arrow.clientWidth - 3) + "px";
+  //           break;
+  //         default:
+  //           // console.log(undefined);
+  //           break;
+  //       }
+  //     });
+  // };
 }
 
 export default fixarrows;
